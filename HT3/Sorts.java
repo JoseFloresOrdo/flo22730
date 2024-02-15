@@ -24,46 +24,289 @@ public class Sorts {
         Shell Shell = new Shell();
         Heap Heap = new Heap();
 
-        // Intentar escribir los números en el archivo
-        try (FileWriter escritor = new FileWriter(nombreArchivo)) {
-            // Generar 3000 números enteros aleatorios y escribirlos en el archivo
-            for (int i = 0; i < 3000; i++) {
-                int numeroAleatorio = random.nextInt(10001); // Números aleatorios en el rango de 0 a 10000
-                escritor.write(numeroAleatorio + "\n");
-            }
-            System.out.println("Se han generado y guardado 3000 números enteros aleatorios en el archivo '" + nombreArchivo + "'.");
-        } catch (IOException e) {
-            System.out.println("Ocurrió un error al escribir en el archivo: " + e.getMessage());
-        }
-
-        try (BufferedReader lector = new BufferedReader(new FileReader("numeros_enteros.txt"))) {
-            String linea;
-            // Leer cada línea del archivo
-            while ((linea = lector.readLine()) != null) {
-                // Convertir la línea a un entero y agregarlo al ArrayList
-                numeros.add(Integer.parseInt(linea));
-            }
-            System.out.println("Se han leído los números del archivo y se han almacenado en el ArrayList.");
-        } catch (IOException e) {
-            System.out.println("Ocurrió un error al leer el archivo: " + e.getMessage());
-        }
-
         // Definir la cantidad inicial de datos aleatorios
-        int initialSize = 500;
-        int increment = 500; // Incremento en cada iteración
-        int iterations = 5; // Número de iteraciones
+        int initialSize = 10;
+        int increment = 0; // Incremento en cada iteración
+        int iterations = 3000; // Número de iteraciones
         
-        for (int i = 0; i < iterations; i++) {
-            // Generar y agregar datos aleatorios
-            for (int j = 0; j < initialSize + i * increment; j++) {
-                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
-            }
+        
 
-            nomo.gnomeSort(numeros);
-    
-            // Mostrar la cantidad de datos generados
-            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
-        }
+        System.out.println("1) Hacer un gnome sort");
+                System.out.println("2) Hacer un merge sort");
+                System.out.println("3) Hacer un quick sort");
+                System.out.println("4) Hacer un radix sort");
+                System.out.println("5) Hacer un selection sort");
+                System.out.println("6) Hacer un shell sort");
+                System.out.println("7) Hacer un heap sort");
+                int opc = teclado.nextInt();
+                teclado.nextLine();
+                switch (opc) {
+                    case 1:
+
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int list = teclado.nextInt();
+                    teclado.nextLine();
+                    if (list == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            nomo.gnomeSort(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            nomo.gnomeSortDesc(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+
+                    }
+                }
+
+                        
+                    break;
+                    case 2:
+
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int ord = teclado.nextInt();
+                    teclado.nextLine();
+                    if (ord == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Merge.mergeSort(numeros, 0, numeros.size() - 1);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Merge.mergeSortChik(numeros, 0, numeros.size() - 1);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }
+
+                    break;
+                    case 3:
+                        
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int Dip = teclado.nextInt();
+                    teclado.nextLine();
+                    if (Dip == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Quick.quickSortPick(numeros, 0, numeros.size() - 1);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Quick.quickSort(numeros, 0, numeros.size() - 1);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }
+
+                    break;
+                    case 4:
+
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int Tok = teclado.nextInt();
+                    teclado.nextLine();
+                    if (Tok == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Radix.radixSort(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Radix.radixSortMin(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }
+
+                        break;
+                    case 5:
+
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int Ko = teclado.nextInt();
+                    teclado.nextLine();
+                    if (Ko == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Selection.selectionSortMin(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Selection.selectionSort(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }
+
+                    break;
+                    case 6:
+
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int Tu = teclado.nextInt();
+                    teclado.nextLine();
+                    if (Tu == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Shell.shellSort(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Shell.shellSortMin(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }
+
+                    break;
+                    case 7:
+
+                    System.out.println("1) Ascendente");
+                    System.out.println("2) Descendente");
+                    int Po = teclado.nextInt();
+                    teclado.nextLine();
+                    if (Po == 1){
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Heap.heapSort(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }else{
+
+                        for (int i = 0; i < iterations; i++) {
+                            // Generar y agregar datos aleatorios
+                            for (int j = 0; j < initialSize + i * increment; j++) {
+                                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+                            }
+                
+                            Heap.heapSortMin(numeros);
+                    
+                            // Mostrar la cantidad de datos generados
+                            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+                        }
+
+                    }
+
+                    break;
+                    case 8:
+                        break;
+                }
+
+
+
 
     }
 }
