@@ -4,6 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
+import java.util.Scanner;
 
 public class Sorts {
     public static void main(String[] args) {
@@ -12,9 +13,16 @@ public class Sorts {
 
         // Nombre del archivo para guardar los números
         String nombreArchivo = "numeros_enteros.txt";
+        Scanner teclado = new Scanner(System.in);
         ArrayList<Integer> numeros = new ArrayList<>();
-        Archivo Gnome = new Archivo();
+        Gnome nomo = new Gnome();
         Guardar Guarda = new Guardar();
+        Merge Merge = new Merge();
+        Quick Quick = new Quick();
+        Radix Radix = new Radix();
+        Selection Selection = new Selection();
+        Shell Shell = new Shell();
+        Heap Heap = new Heap();
 
         // Intentar escribir los números en el archivo
         try (FileWriter escritor = new FileWriter(nombreArchivo)) {
@@ -40,15 +48,22 @@ public class Sorts {
             System.out.println("Ocurrió un error al leer el archivo: " + e.getMessage());
         }
 
-        Archivo.gnomeSort(numeros);
-
-        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+        // Definir la cantidad inicial de datos aleatorios
+        int initialSize = 500;
+        int increment = 500; // Incremento en cada iteración
+        int iterations = 5; // Número de iteraciones
         
+        for (int i = 0; i < iterations; i++) {
+            // Generar y agregar datos aleatorios
+            for (int j = 0; j < initialSize + i * increment; j++) {
+                numeros.add(random.nextInt(10000)); // Números aleatorios del 0 al 9999
+            }
 
+            nomo.gnomeSort(numeros);
+    
+            // Mostrar la cantidad de datos generados
+            System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
+        }
 
-
-
-
-        
     }
 }
