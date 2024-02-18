@@ -61,6 +61,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -73,8 +75,9 @@ public class Sorts {
                     
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
-
                     }
+
+                    Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
                 }
 
                         
@@ -99,6 +102,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -112,6 +117,8 @@ public class Sorts {
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
+
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
 
                     }
 
@@ -136,6 +143,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -149,6 +158,8 @@ public class Sorts {
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
+
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
 
                     }
 
@@ -173,6 +184,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -186,6 +199,8 @@ public class Sorts {
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
+
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
 
                     }
 
@@ -210,6 +225,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -223,6 +240,8 @@ public class Sorts {
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
+
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
 
                     }
 
@@ -247,6 +266,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -260,6 +281,8 @@ public class Sorts {
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
+
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
 
                     }
 
@@ -284,6 +307,8 @@ public class Sorts {
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
 
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
+
                     }else{
 
                         for (int i = 0; i < iterations; i++) {
@@ -297,6 +322,8 @@ public class Sorts {
                             // Mostrar la cantidad de datos generados
                             System.out.println("Cantidad de datos generados en la iteración " + (i+1) + ": " + numeros.size());
                         }
+
+                        Guarda.guardarNumerosOrdenados(numeros, "numeros_enteros.txt");
 
                     }
 
