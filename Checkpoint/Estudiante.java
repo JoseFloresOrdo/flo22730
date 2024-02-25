@@ -1,48 +1,37 @@
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
-
 public class Estudiante {
 
-    private Map<String, Float> Pagos;
-    private Map<String, Float> Nota;
+   private String Nombre;
+   private String Apellido;
+   private String Pagos;
 
+   public Estudiante(String Nombre, String Apellido, String Pagos){
+        this.Nombre = Nombre;
+        this.Apellido = Apellido;
+        this.Pagos = Pagos;
+   }
 
-    public Estudiante(){
-        Pagos = new HashMap<>();
-        Nota = new HashMap<>();
+    public String getPagos() {
+    return this.Pagos;
     }
 
-    public void AddPAgo(String Mes, float Precio){
-        Pagos.put(Mes, Precio);
-    }
-
-    public void AddNote(String Clase, float Note){
-        Nota.put(Clase, Note);
-    }
-
-    public Float RevPagos(String Palabra){
-        return Pagos.get(Palabra);
-    }
-
-    public Float RevNotas(String Palabra){
-        return Pagos.get(Palabra);
-    }
-
-    public Map<String,Float> getPagos() {
-        return this.Pagos;
-    }
-
-    public void setPagos(Map<String,Float> Pagos) {
+    public void setPagos(String Pagos) {
         this.Pagos = Pagos;
     }
 
-    public Map<String,Float> getNota() {
-        return this.Nota;
+    public String getNombre() {
+        return this.Nombre;
     }
 
-    public void setNota(Map<String,Float> Nota) {
-        this.Nota = Nota;
+    public void setNombre(String Nombre) {
+        this.Nombre = Nombre;
     }
-     
+
+    public String getApellido() {
+        return this.Apellido;
+    }
+
+    public void setApellido(String Apellido) {
+        this.Apellido = Apellido;
+    }
+
 }
