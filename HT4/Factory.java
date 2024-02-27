@@ -1,7 +1,7 @@
 public class Factory<T> {
 
     private IStack<T> Factorio = null;
-
+    
     public IStack<T> createStack(String Elec) {
         switch (Elec) {
             case "Vector":
@@ -10,9 +10,13 @@ public class Factory<T> {
             case "ArrayList":
                 Factorio = new StackArrayList<T>();
                 break;
-            case "ArrayListEncadenado":
-                Factorio = new ListSimple<T>();
+            case "ListaSimple":
+                Factorio = new StackList<T>(new SinglyLinkedList<T>());
                 break;
+            case "ListaDoble":
+            Factorio = new StackList<T>(new DoublyLinkedList<T>());
+            break;
+
         }
         return Factorio;
     }

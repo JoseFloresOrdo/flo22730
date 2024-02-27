@@ -27,4 +27,13 @@ public class StackVector <T> extends Stack<T> implements IStack<T>{
     public T peek() {
         return this.Vector.get(0);
     }
+
+    @Override
+    public T pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("El stack está vacío");
+        }
+       
+        return Vector.remove(Vector.size()-1);
+    }
 }

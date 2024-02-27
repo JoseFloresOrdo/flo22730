@@ -4,7 +4,7 @@ public class StackArrayList<T> extends Stack<T> implements IStack<T> {
 
     private ArrayList<T> Listas;
 
-    public StackUsingArrayList() {
+    public  StackArrayList() {
         this.Listas = new ArrayList<T>();
     }
 
@@ -26,6 +26,14 @@ public class StackArrayList<T> extends Stack<T> implements IStack<T> {
 
     public T peek() {
         return this.Listas.get(0);
+    }
+
+    @Override
+    public T pop() {
+        if (isEmpty()) {
+            throw new IllegalStateException("La pila está vacía. No se puede realizar pop.");
+        }
+        return this.Listas.remove(this.Listas.size() - 1);
     }
 
 }
