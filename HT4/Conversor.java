@@ -1,87 +1,61 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.Queue;
+import java.util.Stack;
 
 public class Conversor {
-    Queue<String> lista;
-    StackVector<String> stack;
 
-    public Conversor(){
-        this.lista= new LinkedList<String>();;
-        this.stack= new StackVector<String>();
-    }
+    public String conversor(ArrayList<String> infixTokens) {
+        StringBuilder postfix = new StringBuilder();
+        Stack<String> stack = new Stack<>();
 
-    
-    public int puesto(String ch){
-        if(ch.matches("\\+") || ch.matches("\\-")){
-            return 1;
-
-        }
-        else if(ch.matches("\\*") || ch.matches("/")){
-            return 2;
-        }
-        else{
-            return 0;
-        }
-
-    }
-
-    public String convertir( ArrayList<String> separado){
-        stack.push("#");
-        String postfix="";
-        for(String caracter: separado){
-            if(caracter.matches("\\d")){
-                lista.offer(caracter);
-            }
-            else if(caracter.matches( "\\(")){
-                stack.push(caracter);
+        for (String token : infixTokens) {
+            
+            if (operador(token)) {
+                postfix.append(token).append(" ");
             }
             
-            else if(caracter.matches("\\)")){
-                while (!stack.isEmpty() && !stack.peek().matches("\\(")) {
-                    postfix= postfix +" "+stack.pop();
-                    
-                }
-                stack.pop();
+            else if (token.equals("(")) {
+                stack.push(token);
             }
+           
+         
 
-            else{
-                if(puesto(caracter)> puesto(stack.peek())){
-                    stack.push(caracter);
+            else {
+               
+                while (!stack.isEmpty() && puesto(stack.peek()) >= puesto(token)) {
+                    postfix.append(stack.pop()).append(" ");
                 }
-                else{
-                    while(stack.peek()!="#" && puesto(caracter) <= puesto(stack.peek())){
-                        postfix+=stack.peek();
-                        stack.pop();
-                    }
-        
-                }
-                stack.push(caracter);
+                
+                stack.push(token);
             }
-            
         }
 
-        while(stack.peek()!="#"){
-            postfix+=stack.peek();
-            stack.pop();
-        }
-        return postfix;
 
+        while (!stack.isEmpty()) {
+            postfix.append(stack.pop()).append(" ");
+        }
+
+        return postfix.toString().trim();
     }
 
-     public ArrayList<String> validateExpression(String expression)  {
-        ArrayList<String>  separado = new ArrayList<String>(Arrays.asList(expression.split(" ")));
-        for (String exp: separado){
-            if(exp.matches("-?\\d+(\\.\\d+)?")){
-                continue;
-            } else if (exp.matches("[\\+\\-\\*\\/\\%]")){
-                continue;
-            }
-            else{
-                throw  new IllegalArgumentException("Error: " + exp + " no es un número ni un símbolo.");
-            }
-        }
-        return separado;
+ 
+    private boolean operador(String token) {
+        return token.matches("[0-9]+");
     }
+
+ 
+    private int puesto(String operator) {
+        switch (operator) {
+            case "+":
+            case "-":
+                return 1;
+            case "*":
+            case "/":
+                return 2;
+            default:
+                return 0;
+        }
+    }
+
+       
 }

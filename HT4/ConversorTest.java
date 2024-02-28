@@ -10,8 +10,8 @@ public class ConversorTest {
     public void testConvertir() {
         Conversor conversor= new Conversor();
 
-        ArrayList<String> infix= conversor.validateExpression("2 + 1");
-        assertEquals("1 2 +",conversor.convertir(infix) );
+        ArrayList<String> infix= conversor.validateExpression("( 2 + 1 ) * 9");
+        assertEquals("2 1 + 9 *",conversor.conversor(infix) );
     }
 
     @Test
