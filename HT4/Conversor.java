@@ -18,7 +18,12 @@ public class Conversor {
                 stack.push(token);
             }
            
-         
+            else if (token.equals(")")) {
+                while (!stack.isEmpty() && !stack.peek().equals("(")) {
+                    postfix.append(stack.pop()).append(" ");
+                }
+                stack.pop(); 
+            }
 
             else {
                
@@ -57,5 +62,23 @@ public class Conversor {
         }
     }
 
-       
+        public ArrayList<String> validateExpression(String expression)  {
+        ArrayList<String>  separado = new ArrayList<String>(Arrays.asList(expression.split(" ")));
+        for (String exp: separado){
+            if(exp.matches("-?\\d+(\\.\\d+)?")){
+                continue;
+            } else if (exp.matches("[\\+\\-\\*\\/\\%]")){
+                continue;
+            }
+
+            else if(exp.matches("[()]")){
+                continue;
+            }
+
+            else{
+                throw  new IllegalArgumentException("Error: " + exp + " no es un número ni un símbolo.");
+            }
+        }
+        return separado;
+    }
 }
