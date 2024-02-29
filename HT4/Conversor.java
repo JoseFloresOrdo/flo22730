@@ -1,9 +1,23 @@
+/*
+ * Autores: Allen Estuardo Ramírez De Paz, 22326.
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * 
+ * 
+ */
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Stack;
 
 public class Conversor {
 
+    
+    /** 
+     * Convierte de una lista tokenizada en infix a String Postfix
+     * @param infixTokens
+     * @return String
+     */
     public String conversor(ArrayList<String> infixTokens) {
         StringBuilder postfix = new StringBuilder();
         Stack<String> stack = new Stack<>();
@@ -44,11 +58,23 @@ public class Conversor {
     }
 
  
+    
+    /** 
+     * Determina si es un operador
+     * @param token
+     * @return boolean
+     */
     private boolean operador(String token) {
         return token.matches("[0-9]+");
     }
 
  
+    
+    /** 
+     * Determina la precedencia de un operador y otro
+     * @param operator
+     * @return int
+     */
     private int puesto(String operator) {
         switch (operator) {
             case "+":
@@ -62,6 +88,12 @@ public class Conversor {
         }
     }
 
+        
+        /** 
+         * Determina si la expresión es válida y la convierte a un ArrayList
+         * @param expression
+         * @return ArrayList<String>
+         */
         public ArrayList<String> validateExpression(String expression)  {
         ArrayList<String>  separado = new ArrayList<String>(Arrays.asList(expression.split(" ")));
         for (String exp: separado){

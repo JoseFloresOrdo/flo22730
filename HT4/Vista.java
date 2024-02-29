@@ -1,12 +1,25 @@
+/*
+ * Autores: Allen Estuardo Ramírez De Paz, 22326.
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * 
+ * 
+ */
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Vista {
+    
+    /** 
+     * Método main
+     * @param args
+     */
     public static void main(String[] args) {
         boolean opc= true;
         Scanner scanner= new Scanner(System.in);
         Factory factory= new Factory<>();
-        System.out.println("Bienvenidoo ingrese la pila que desee usar: ");
+        System.out.println("Bienvenido ingrese la pila que desee usar: ");
         String eleccion= scanner.nextLine();
         String nombreArchivo = "Num.txt";
         Lectora lectora = new Lectora();

@@ -1,3 +1,11 @@
+/*
+ * Autores: Allen Estuardo Ramírez De Paz, 22326.
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * 
+ * 
+ */
 public class StackList<T> extends Stack<T> implements IStack<T> {
     private AbstractList<T> list;
 
@@ -5,6 +13,10 @@ public class StackList<T> extends Stack<T> implements IStack<T> {
         this.list = list;
     }
 
+    
+    /** 
+     * @param value
+     */
     public void push(T value) {
         list.enqueue(value);
     }

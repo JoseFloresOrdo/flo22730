@@ -1,3 +1,11 @@
+/*
+ * Autores: Allen Estuardo Ramírez De Paz, 22326.
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * 
+ * 
+ */
 import java.util.Vector;
 
 public class StackVector <T> extends Stack<T> implements IStack<T>{
@@ -8,6 +16,10 @@ public class StackVector <T> extends Stack<T> implements IStack<T>{
         this.Vector = new Vector<T>();
     }
 
+    
+    /** 
+     * @return int
+     */
     public int count() {
         return this.Vector.size();
     }

@@ -1,3 +1,11 @@
+/*
+ * Autores: Allen Estuardo Ramírez De Paz, 22326.
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * 
+ * 
+ */
 public class DoublyLinkedList<T> extends AbstractList<T> implements IList<T> {
     private Node<T> head;
     private Node<T> tail;

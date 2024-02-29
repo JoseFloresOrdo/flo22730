@@ -1,3 +1,11 @@
+/*
+ * Autores: Allen Estuardo Ramírez De Paz, 22326.
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * 
+ * 
+ */
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 
@@ -11,7 +19,7 @@ public class ConversorTest {
         Conversor conversor= new Conversor();
 
         ArrayList<String> infix= conversor.validateExpression("( 8 / 4 ) * 4");
-        assertEquals("3 3 / 1 + *",conversor.conversor(infix) );
+        assertEquals("8 4 / 4 *",conversor.conversor(infix) );
     }
 
     @Test
