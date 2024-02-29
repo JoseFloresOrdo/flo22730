@@ -26,7 +26,7 @@ public class Vista {
         ArrayList<String> lineas = lectora.readFile(nombreArchivo);
         Conversor conversor= new Conversor();
         CalculadoraPostFix calculadora= new CalculadoraPostFix(factory.createStack(eleccion));
-        System.out.println("Ingrese el índice del archivo TXT que desea calcular (por ejemplo, 1, 2, etc.):");
+        System.out.println("Ingrese la linea del archivo a leer (por ejemplo, 1, 2, etc.):");
         int indice = scanner.nextInt();
         int indiceAnterior = indice - 1;
         ArrayList<String> infix= conversor.validateExpression(lineas.get(indiceAnterior));
