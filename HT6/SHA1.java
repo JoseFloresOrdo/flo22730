@@ -1,12 +1,13 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MD5 implements Hash{
-    
-    public String Codificar(String Correo){
+public class SHA1 implements Hash{
+
+    @Override
+    public String Codificar(String Correo) {
 
         try {
-            MessageDigest md = MessageDigest.getInstance("MD5");
+            MessageDigest md = MessageDigest.getInstance("SHA-1");
             byte[] messageDigest = md.digest(Correo.getBytes());
             StringBuilder sb = new StringBuilder();
             for (byte b : messageDigest) {
@@ -17,5 +18,5 @@ public class MD5 implements Hash{
             throw new RuntimeException(e);
         }
     }
-
+    
 }
