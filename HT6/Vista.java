@@ -12,18 +12,18 @@ public class Vista {
         String RESET = "\033[0m";
         String AMARILLO = "\033[0;33m";
         LectoraJson<String, Estudiante> lectora = new LectoraJson<>();
-        System.out.println(RESET+"Ingrese el tipo de map que desea usar:\n (1) HASHMAP \n (2) TREEMAP \n (3) LINKEDHASHMAP");
+        System.out.println(RESET+"Ingrese el tipo de map que desea usar (Como número):\n (1) HASHMAP \n (2) TREEMAP \n (3) LINKEDHASHMAP");
         int opcionMap = scanner.nextInt();
         scanner.nextLine();
         AbstractMap<String, Estudiante> mapInd = factoryMapasInd.getMapInstance(opcionMap);
         AbstractMap<String, List<Estudiante>> mapNac = factoryMapasNac.getMapInstance(opcionMap);
-        System.out.println("Ingrese el tipo de codificación que desea usar: \n MD5 \n Organica  \n SHA-1");
+        System.out.println("Ingrese el tipo de codificación que desea usar (Como texto): \n MD5 \n Organica  \n SHA-1");
         String code = scanner.nextLine();
         Hash codificador = factoryCodificacion.CreateStack(code);
         int valor = 5;
         int opc = 5;
         while (valor != 0) {
-            System.out.println(RESET+"¿Qué desea hacer? \n (1) Cargar datos \n (2) Ver todos los estudiantes \n (3) Buscar por email \n(4) Buscar por nacionalidad");
+            System.out.println(RESET+"¿Qué desea hacer? \n (1) Cargar datos \n (2) Ver todos los estudiantes \n (3) Buscar por email \n(4) Buscar por nacionalidad\n (5) Salir");
             opc = scanner.nextInt();
             if (opc == 1) {
                 mapInd = lectora.crearMapIndividual(mapInd, codificador);
@@ -61,7 +61,11 @@ public class Vista {
                     System.out.println(AMARILLO+"No hay estudiantes de esa nacionalidad."+RESET);
                 }
             }
+            else if(opc==5){
+                valor=0;
+            }
         }
+        System.out.println("Cerrando sesión.");
     }
 }
 
