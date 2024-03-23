@@ -1,3 +1,11 @@
+/*
+ * Allen Estuardo Ramírez De Paz, 22326
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * HDT6
+ * 
+ */
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -10,6 +18,12 @@ import java.util.List;
 
 public class LectoraJson<K, V> {
 
+    
+    /** 
+     * @param AbstractMap<K
+     * @param mapa
+     * @return AbstractMap<K, List<Estudiante>>
+     */
     public AbstractMap<K, List<Estudiante>> crearMap(AbstractMap<K, List<Estudiante>> mapa) {
         List<Estudiante> estudiantes = leerEstudiantesDesdeJSON();
         for (Estudiante estudiante : estudiantes) {
@@ -22,6 +36,12 @@ public class LectoraJson<K, V> {
         return mapa;
     }
     
+    
+    /** 
+     * @param mapa
+     * @param codificacion
+     * @return AbstractMap<K, Estudiante>
+     */
     public AbstractMap<K, Estudiante> crearMapIndividual(AbstractMap<K, Estudiante> mapa, Hash codificacion) {
         List<Estudiante> estudiantes = leerEstudiantesDesdeJSON();
         for (Estudiante estudiante : estudiantes) {
@@ -31,6 +51,10 @@ public class LectoraJson<K, V> {
         return mapa;
     }
 
+    
+    /** 
+     * @return List<Estudiante>
+     */
     private List<Estudiante> leerEstudiantesDesdeJSON() {
         List<Estudiante> estudiantes = new ArrayList<>();
         JSONParser parser = new JSONParser();

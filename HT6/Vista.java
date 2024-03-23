@@ -1,9 +1,22 @@
+/*
+ * Allen Estuardo Ramírez De Paz, 22326
+ * José Javier Flores Ordoñez, 22730
+ * Catedrático: Moisés Alonso
+ * Auxiliar: Joaquín Puente
+ * HDT6
+ * 
+ */
 import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 public class Vista {
+    
+    /** 
+     * Función principal
+     * @param args
+     */
     public static void main(String[] args) {
         Factory factoryCodificacion = new Factory();
         Scanner scanner = new Scanner(System.in);
