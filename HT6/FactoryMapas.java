@@ -1,3 +1,4 @@
+//Clase recuperada del repositorio de la clase
 import java.util.AbstractMap;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
