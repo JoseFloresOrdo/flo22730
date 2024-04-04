@@ -1,5 +1,5 @@
 public class Nodo {
-
+    
     Association<String, String> palabra;
     Nodo left, right;
 
@@ -7,5 +7,4 @@ public class Nodo {
         this.palabra = palabra;
         left = right = null;
     }
-    
 }

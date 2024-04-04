@@ -1,4 +1,4 @@
-public class Association<K,V> {
+public class Association<K, V>{
 
     private K llave;
     private V valor;
@@ -44,5 +44,4 @@ public class Association<K,V> {
     public void setValor(V valor) {
         this.valor = valor;
     }
-    
 }

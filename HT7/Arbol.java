@@ -16,11 +16,11 @@ public class Arbol {
         return current;
     }
 
-    public void Inicio(Association<String, String> palabra){
+    public void empezar(Association<String, String> palabra){
         root = insertar(root, palabra);
     }
 
-    private String BuscarNodo(Nodo current, String palabra) {
+    private String buscarNodo(Nodo current, String palabra) {
         if (current == null) {
             return "";
         } 
@@ -28,12 +28,11 @@ public class Arbol {
             return current.palabra.getValor();
         } 
         return palabra.compareToIgnoreCase(current.palabra.getLlave()) < 0
-          ? BuscarNodo(current.left, palabra)
-          : BuscarNodo(current.right, palabra);
+          ? buscarNodo(current.left, palabra)
+          : buscarNodo(current.right, palabra);
     }
 
     public String empezarb(String palabra) {
-        return BuscarNodo(root, palabra);
+        return buscarNodo(root, palabra);
     }
-    
 }
